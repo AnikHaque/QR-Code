@@ -24,3 +24,12 @@ def read_user_data(file_path):
         print(f"QR code saved as '{output_filename}'")
     except Exception as e:
         print(f"Failed to generate or save QR code: {e}")
+
+def main():
+    file_path = 'userdata.txt'  # Change this if your file is named differently
+    url, filename = read_user_data(file_path)
+    if url and filename:
+        generate_qr_code(url, filename)
+
+if __name__ == "__main__":
+    main()
